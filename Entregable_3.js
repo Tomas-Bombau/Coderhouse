@@ -1,13 +1,16 @@
 const express = require("express")
 const fs = require("fs")
 const app = express()
-const PORT = 3001
+const PORT = 8080
 
 
 app.listen(PORT, () => {
     console.log(`Server listening in port ${PORT}`)
 })
 
+app.get("/", async (req, res) => {
+    res.send("Esta es la página de inicio")
+})
 
 app.get("/products?", async (req, res) => {
     const { limit } = req.query
